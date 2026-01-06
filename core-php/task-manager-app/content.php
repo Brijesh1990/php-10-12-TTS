@@ -13,40 +13,39 @@ echo $fetch["totaltask"];
 <hr class="w-25">
 <div class="w-100 overflow-auto">
 <table id="example" class="table table-responsive mt-5">
-    <thead>
-    <tr class="bg-dark text-white">
-        <th>#</th>
-        <th>Task</th>
-        <th>asignTo</th>
-        <th>Date</th>
-        <th>status</th>
-        <th>Action</th>
-        </tr>
+<thead>
+<tr class="bg-dark text-white">
+<th>#</th>
+<th>Task</th>
+<th>asignTo</th>
+<th>Date</th>
+<th>status</th>
+<th>Action</th>
+</tr>
 </thead>
-        <!-- display all task -->
-       <tbody> 
-        <?php 
+<!-- display all task -->
+<tbody> 
+<?php 
 // echo $select="select tbl_task.*,username from tbl_task join tbl_assignto on tbl_task.userid=tbl_assignto.userid"; exit();
-
 $select="select tbl_task.*,username from tbl_task join tbl_assignto on tbl_task.userid=tbl_assignto.userid";
 $query=mysqli_query($conn,$select);
 while($fetch=mysqli_fetch_array($query))
 {
 ?>
 
-    <tr>
-        <td><?php echo $fetch["taskid"];?></td>
-        <td><?php echo $fetch["taskname"];?></td>
-        <td><?php echo $fetch["username"];?></td>
-        <td><?php echo $fetch["added_date"];?></td>
-        <td><?php echo $fetch["status"];?></td>
-        
-    
-        <td>
-        <div style="min-width:80px"><a href="delete_data.php?del_id=<?php echo $fetch["taskid"];  ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure to delete Data ?')"><span class="bi bi-trash"></span></a> | <a href="" class="btn btn-sm btn-primary"><span class="bi bi-pencil"></span></a></div></td>
-    </tr>
+<tr>
+<td><?php echo $fetch["taskid"];?></td>
+<td><?php echo $fetch["taskname"];?></td>
+<td><?php echo $fetch["username"];?></td>
+<td><?php echo $fetch["added_date"];?></td>
+<td><?php echo $fetch["status"];?></td>
 
-    <?php 
+
+<td>
+<div style="min-width:80px"><a href="delete_data.php?del_id=<?php echo $fetch["taskid"];  ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure to delete Data ?')"><span class="bi bi-trash"></span></a> | <a href="edit_data.php?edit_id=<?php echo $fetch["taskid"]; ?>" class="btn btn-sm btn-primary"><span class="bi bi-pencil"></span></a></div></td>
+</tr>
+
+<?php 
 }
 ?>
 </tbody>
