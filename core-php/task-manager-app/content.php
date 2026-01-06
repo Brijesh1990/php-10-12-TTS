@@ -42,7 +42,8 @@ while($fetch=mysqli_fetch_array($query))
         <td><?php echo $fetch["status"];?></td>
         
     
-        <td><div style="min-width:80px"><a href="" class="btn btn-sm btn-danger"><span class="bi bi-trash"></span></a> | <a href="" class="btn btn-sm btn-primary"><span class="bi bi-pencil"></span></a></div></td>
+        <td>
+        <div style="min-width:80px"><a href="delete_data.php?del_id=<?php echo $fetch["taskid"];  ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure to delete Data ?')"><span class="bi bi-trash"></span></a> | <a href="" class="btn btn-sm btn-primary"><span class="bi bi-pencil"></span></a></div></td>
     </tr>
 
     <?php 
