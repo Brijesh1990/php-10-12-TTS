@@ -26,7 +26,7 @@ if(isset($_POST['addTask'])){
 }
 ?>
 <!-- create a content -->
-<div class="w-50 mx-auto bg-white p-5">
+<div class="mx-auto bg-white p-5 task-box">
     <div class="row">
         <div class="col-md-12">
             <h2 class="">Good Evening, <br> <?php echo $_SESSION['name']; ?>!</h2>

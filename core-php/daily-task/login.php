@@ -3,30 +3,30 @@
 include 'config.php';
 // add user login code here
 if(isset($_POST['login'])){
-    $email=$_POST['email'];
-    $password=base64_encode($_POST['password']);
-
-    $sql="SELECT * FROM tbl_register WHERE email='$email' AND password='$password'";
-    $query=mysqli_query($conn,$sql);
-    $row=mysqli_fetch_array($query);
-    $count=mysqli_num_rows($query);
-    if($count==1)
-        {
-            $_SESSION['rid']=$row['rid'];
-            $_SESSION['name']=$row['name'];
-            $_SESSION['email']=$row['email'];
-            echo "<script>
-            alert('Login Successful');
-            window.location.href='content.php';
-            </script>";
-        }
-    else
-        {
-            echo "<script>
-            alert('Invalid Credentials');
-            window.location.href='login.php';
-            </script>";
-        }
+$email=$_POST['email'];
+$password=base64_encode($_POST['password']);
+$sql="SELECT * FROM tbl_register WHERE email='$email' AND password='$password'";
+$query=mysqli_query($conn,$sql);
+$row=mysqli_fetch_array($query);
+$count=mysqli_num_rows($query);
+if($count==1)
+{
+$_SESSION["expire_time"]=time() + 10;    
+$_SESSION['rid']=$row['rid'];
+$_SESSION['name']=$row['name'];
+$_SESSION['email']=$row['email'];
+echo "<script>
+alert('Login Successful');
+window.location.href='content.php';
+</script>";
+}
+else
+{
+echo "<script>
+alert('Invalid Credentials');
+window.location.href='login.php';
+</script>";
+}
 }
 
 ?>
@@ -47,30 +47,35 @@ if(isset($_POST['login'])){
 </head>
 <body>
 
-    <container>
-        <div class="task-box m-auto mt-5 p-4 bg-white  rounded-lg shadow-lg">
-            <h2 class="mx-auto text-center">Login</h2>
-            <form method="post">
-            
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" required>
-                </div>
+<container>
+<div class="task-box m-auto mt-5 p-4 bg-white  rounded-lg shadow-lg">
+<?php
+if (isset($_GET['msg']) && $_GET['msg'] == 'expired') {
+    echo '<p style="color:green; font-weight:light; text-align:center;" class="border border-1 p-2 border-dark">
+            Your session has expired. Please login again.
+          </p>';
+}
+?>    
+<h2 class="mx-auto text-center">Login</h2>
+<form method="post">
 
+<div class="mb-3">
+<label for="email" class="form-label">Email address</label>
+<input type="email" class="form-control" id="email" name="email" required>
+</div>
+<div class="mb-3">
+<label for="password" class="form-label">Password</label>
+<input type="password" class="form-control" id="password" name="password" required>
+</div>
 
+<button type="submit" name="login" class="btn btn-primary">Login</button>
+<!-- create a next page button -->
+<div class="mt-0 p-2 mb-5">
+<a href="register.php" class="btn  rounded-pill float-left fs-5 text-danger"><i class="bi bi-arrow-return-left"></i> Back</a>
 
-                <button type="submit" name="login" class="btn btn-primary">Login</button>
-            <!-- create a next page button -->
-            <div class="mt-0 p-2 mb-5">
-                 <a href="register.php" class="btn  rounded-pill float-left fs-5 text-danger"><i class="bi bi-arrow-return-left"></i> Back</a>
-
-                <a href="login.php" class="btn  rounded-pill float-end"><i class="bi bi-arrow-right-circle-fill fs-1 text-dark"></i></a>
-            </div>
-        </div>
+<a href="login.php" class="btn  rounded-pill float-end"><i class="bi bi-arrow-right-circle-fill fs-1 text-dark"></i></a>
+</div>
+</div>
 
 
 </body>
