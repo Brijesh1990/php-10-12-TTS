@@ -11,7 +11,7 @@ $row=mysqli_fetch_array($query);
 $count=mysqli_num_rows($query);
 if($count==1)
 {
-$_SESSION["expire_time"]=time() + 10;    
+$_SESSION["expire_time"]=time() + 180;    
 $_SESSION['rid']=$row['rid'];
 $_SESSION['name']=$row['name'];
 $_SESSION['email']=$row['email'];
@@ -69,6 +69,7 @@ if (isset($_GET['msg']) && $_GET['msg'] == 'expired') {
 </div>
 
 <button type="submit" name="login" class="btn btn-primary">Login</button>
+<b class="ms-3"><a href="forgetpassword.php">Forget Password ?</a></b>
 <!-- create a next page button -->
 <div class="mt-0 p-2 mb-5">
 <a href="register.php" class="btn  rounded-pill float-left fs-5 text-danger"><i class="bi bi-arrow-return-left"></i> Back</a>

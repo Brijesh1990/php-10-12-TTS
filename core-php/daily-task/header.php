@@ -28,7 +28,9 @@
     <!-- Offcanvas Menu -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title">Add Task</h5>
+        <h5 class="offcanvas-title text-success">
+          Welcome : <?php echo ucfirst($_SESSION["name"]);?>
+        </h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
       </div>
 
@@ -40,8 +42,14 @@
           <li class="nav-item">
             <a class="nav-link" href="addtask.php">Add Task</a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="managetask.php">Manage Task</a>
+          </li>
+
+          
+          <li class="nav-item">
+            <a class="nav-link" href="changepassword.php">Change Password</a>
           </li>
 
            <li class="nav-item">

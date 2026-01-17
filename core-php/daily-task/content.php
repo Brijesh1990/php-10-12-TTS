@@ -2,8 +2,8 @@
 //add connection
 include 'config.php';
 // if session expired
-// session lifetime in seconds
-$session_lifetime = 10;
+// session lifetime in seconds  (default expire time 24 minute)
+$session_lifetime = 180;
 if (isset($_SESSION['expire_time']) && time() > $_SESSION['expire_time']) {
 session_unset();
 session_destroy();
@@ -22,7 +22,7 @@ else
 // add header file
 include 'header.php';
 // fetch task list here
-$session_lifetime = 10;
+$session_lifetime = 180;
 $rid=$_SESSION['rid'];
 $sql="SELECT * FROM tbl_task WHERE rid='$rid'";
 $query=mysqli_query($conn,$sql);
