@@ -1,9 +1,9 @@
 <?php 
 session_start();
-$conn=new mysqli("localhost","root","","rensitaskdb");
-// live database connection
-// $conn=new mysqli("sql100.byethost32.com","b32_40854273","t123456","b32_40854273_rensitaskdb");
-
+// create a connection for localhost
+// $conn=new mysqli("localhost","root","","rensitaskdb");
+// create a live server database connection 
+$conn=new mysqli("sql100.byethost12.com","b12_40946069","d123456","b12_40946069_rensitaskdb");
 if($conn->connect_error){
 die("Connection failed: ".$conn->connect_error);
 }
