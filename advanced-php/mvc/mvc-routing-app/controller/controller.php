@@ -5,6 +5,34 @@ class controller extends model
     public function __construct()
     {
      parent:: __construct();
+    //create a logic to fetch employee in add task as dropdown
+    $employedata=$this->selectalldata('tbl_employee');
+    // create a logic for insert task data 
+    if(isset($_POST["addTask"]))
+        {
+            $taskname=$_POST["taskName"];
+            $assignto=$_POST["assignto"];
+            $tasklevel=$_POST["task_level"];
+            $addate=$_POST["added_date"];
+            $desc=$_POST["taskDescription"];            
+            $data=array("taskname"=>$taskname,"employee_id"=>$assignto,"tasktype"=>$tasklevel,"added_date"=>$addate,"descriptions"=>$desc);
+            $chk=$this->insertalldata('tbl_task',$data);
+            if($chk)
+                {
+                    echo "<script>
+                    alert('Task added successfully')
+                    window.location='./add-task';
+                    </script>";
+                }
+                else 
+                    {
+                    echo "<script>
+                    alert('something went wrong')
+                    window.location='./add-task';
+                    </script>";
+                    }
+            
+        }  
     //load view here
     if(isset($_SERVER["PATH_INFO"]))
      {
