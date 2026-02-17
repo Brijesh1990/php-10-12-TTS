@@ -8,31 +8,31 @@ padding: 0;
 .task-box
 {
 background-color: #fab62f;
-width: 400px;
+width: 950px;
 padding: 20px;
 border-radius: 5px;
 }
 .navbar
 {
-    width: 400px !important;
-    margin: 50px auto;
-    background-color: #ffffff;
+width: 950px !important;
+margin: 50px auto;
+background-color: #ffffff;
 
 
 }
 .navbar-nav
 {
-    margin-left: auto;
-    margin-right: auto;
+margin-left: auto;
+margin-right: auto;
 
 }
 .navbar-nav li a
 {
-    font-size: 1.2rem;
-    padding: 10px 15px;
+font-size: 1.2rem;
+padding: 10px 15px;
 }
 .navbar-nav a 
 {
-    color: #000 !important;
-    font-size: 18px;
+color: #000 !important;
+font-size: 18px;
 }
