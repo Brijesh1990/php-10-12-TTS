@@ -10,11 +10,12 @@
   <a href="#" class="flex items-center gap-3 text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-lg transition">
     🏠 Dashboard
   </a>
+  <!-- category Dropdown -->
+       <a href="#" class="flex items-center gap-3 text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-lg transition">👤 Manage customers</a>
 
-  <!-- Products Dropdown -->
-  <div class="flex flex-col">
+  <div class="flex flex-col">    
     <button onclick="toggleDropdown('productsDropdown')" class="flex justify-between items-center gap-3 w-full text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-lg transition focus:outline-none">
-      📦 Products
+      📦 Add Category
       <svg id="productsArrow" class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
       </svg>
@@ -22,8 +23,42 @@
 
     <!-- Dropdown Links -->
     <div id="productsDropdown" class="ml-4 mt-1 flex flex-col gap-1 hidden">
-      <a href="#" class="px-3 py-2 rounded-lg hover:bg-gray-100 text-gray-700 transition">➕ Add Product</a>
-      <a href="#" class="px-3 py-2 rounded-lg hover:bg-gray-100 text-gray-700 transition">📝 Manage Products</a>
+      <a href="<?php echo $mainurl;?>add-category" class="px-3 py-2 rounded-lg hover:bg-gray-100 text-gray-700 transition">➕ Add  Category</a>
+      <a href="<?php echo $mainurl;?>manage-category" class="px-3 py-2 rounded-lg hover:bg-gray-100 text-gray-700 transition">📝 Manage Category</a>
+    </div>
+  </div>
+
+  <!-- products dropdown -->
+  <div class="flex flex-col"> 
+    <button onclick="toggleDropdown('productsDropdown1')" class="flex justify-between items-center gap-3 w-full text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-lg transition focus:outline-none">
+      📦 Add Products
+      <svg id="productsArrow" class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </button>
+
+    <!-- Dropdown Links -->
+    <div id="productsDropdown1" class="ml-4 mt-1 flex flex-col gap-1 hidden">
+      <a href="<?php echo $mainurl;?>add-product" class="px-3 py-2 rounded-lg hover:bg-gray-100 text-gray-700 transition">➕ Add Product</a>
+      <a href="<?php echo $mainurl;?>manage-product" class="px-3 py-2 rounded-lg hover:bg-gray-100 text-gray-700 transition">📝 Manage Products</a>
+    </div>
+  </div>
+
+
+  
+  <!-- FAQ dropdown -->
+  <div class="flex flex-col"> 
+    <button onclick="toggleDropdown('productsDropdown2')" class="flex justify-between items-center gap-3 w-full text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-lg transition focus:outline-none">
+      📦 Add FAQ
+      <svg id="productsArrow" class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </button>
+
+    <!-- Dropdown Links -->
+    <div id="productsDropdown2" class="ml-4 mt-1 flex flex-col gap-1 hidden">
+      <a href="<?php echo $mainurl;?>add-faq" class="px-3 py-2 rounded-lg hover:bg-gray-100 text-gray-700 transition">➕ Add FAQ</a>
+      <a href="<?php echo $mainurl;?>manage-faq" class="px-3 py-2 rounded-lg hover:bg-gray-100 text-gray-700 transition">📝 Manage FAQ</a>
     </div>
   </div>
 
