@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 28, 2026 at 06:47 AM
+-- Generation Time: Mar 10, 2026 at 06:21 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -54,6 +54,25 @@ CREATE TABLE `tbl_addproduct` (
   `product_image` varchar(255) NOT NULL,
   `added_date` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_admin`
+--
+
+CREATE TABLE `tbl_admin` (
+  `adminid` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_admin`
+--
+
+INSERT INTO `tbl_admin` (`adminid`, `email`, `password`) VALUES
+(1, 'superadmin@gmail.com', 'aadmin123456');
 
 -- --------------------------------------------------------
 
@@ -246,6 +265,12 @@ ALTER TABLE `tbl_addproduct`
   ADD KEY `category_id` (`category_id`);
 
 --
+-- Indexes for table `tbl_admin`
+--
+ALTER TABLE `tbl_admin`
+  ADD PRIMARY KEY (`adminid`);
+
+--
 -- Indexes for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
@@ -323,6 +348,12 @@ ALTER TABLE `tbl_addcategory`
 --
 ALTER TABLE `tbl_addproduct`
   MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_admin`
+--
+ALTER TABLE `tbl_admin`
+  MODIFY `adminid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_cart`

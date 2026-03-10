@@ -47,13 +47,13 @@ $baseurl="http://localhost/php-10-12-tts/advanced-php/mvc/blinkit-app/admin/asse
         Login to access the admin dashboard
       </p>
 
-      <form class="space-y-6">
+      <form method="post" class="space-y-6">
 
           <div>
               <label class="block text-sm font-semibold text-gray-700">
                   Admin Email
               </label>
-              <input type="email"
+              <input type="email" name="email"
                 class="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3
                        focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400
                        transition duration-300"
@@ -65,7 +65,7 @@ $baseurl="http://localhost/php-10-12-tts/advanced-php/mvc/blinkit-app/admin/asse
               <label class="block text-sm font-semibold text-gray-700">
                   Password
               </label>
-              <input type="password"
+              <input type="password" name="password"
                 class="mt-2 w-full rounded-lg border border-gray-300 px-4 py-3
                        focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400
                        transition duration-300"
@@ -83,7 +83,7 @@ $baseurl="http://localhost/php-10-12-tts/advanced-php/mvc/blinkit-app/admin/asse
               </a>
           </div>
 
-          <button type="submit"
+          <button type="submit" name="admin_login"
             class="w-full bg-black text-yellow-400 font-semibold py-3 rounded-lg
                    hover:bg-yellow-400 hover:text-black
                    transition duration-300 transform hover:scale-105">

@@ -5,6 +5,40 @@ class Controller extends Model
   public function __construct()
   {
     parent:: __construct();
+    // create an logic of admin Login
+    if(isset($_POST["admin_login"]))
+    {
+       $email=$_POST["email"];
+       $password=$_POST["password"];
+       $chk=$this->adminLogin('tbl_admin',$email,$password);
+       if($chk)
+        {
+         echo "<script>
+         alert('You are LoggedIn with admin successfully')
+         window.location='./dashboard'
+         </script>";
+        }
+        else 
+        {
+          echo "<script>
+         alert('Your  email and password are Incorrect')
+         window.location='./'
+         </script>";
+        }
+    }
+
+    // create an logic of session logout 
+      if(isset($_GET["adminlogout"]))
+      {
+         $chk=$this->LogoutAdmin();
+         if($chk)
+          {
+         echo "<script>
+         alert('You are logout successfully')
+         window.location='./'
+         </script>";
+          }
+      }
     //set routing of templates 
     if(isset($_SERVER["PATH_INFO"]))
         {
@@ -20,6 +54,14 @@ class Controller extends Model
                 require_once("header.php");
                 require_once("sidebar.php");
                 require_once("content.php");
+                require_once("footer.php");
+                break;
+                
+                case '/change-password':
+                require_once("index.php");
+                require_once("header.php");
+                require_once("sidebar.php");
+                require_once("changepassword.php");
                 require_once("footer.php");
                 break;
                 case '/add-category':
