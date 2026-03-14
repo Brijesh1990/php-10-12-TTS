@@ -1,0 +1,33 @@
+body 
+{
+margin: 0;
+padding: 0;
+overflow-x: hidden;
+box-sizing: border-box;    
+}
+.app 
+{
+width: 60%;
+height: auto;
+margin: auto;
+margin-top: 5%;    
+}
+.app button 
+{
+width: 22%;
+height: auto;
+margin: auto;
+padding: 5px;
+border: none;
+background-color: coral;    
+}
+#res 
+{
+width: auto;
+height: auto;
+background-color: coral;
+padding: 5px;
+color: white;
+display: none;
+transition: 2s ease all !important;    
+}
