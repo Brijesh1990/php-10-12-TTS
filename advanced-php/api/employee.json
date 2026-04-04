@@ -1,0 +1,39 @@
+[
+    {
+        "id":101,
+        "name":"viraj",
+        "age":22,
+        "department":"IT"
+
+    },
+    {
+        "id":102,
+        "name":"vipul",
+        "age":22,
+        "department":"CSE"
+
+    },
+
+    {
+        "id":103,
+        "name":"harshita",
+        "age":28,
+        "department":"EC"
+
+    },
+
+    {
+        "id":104,
+        "name":"jinali",
+        "age":29,
+        "department":"HR"
+
+    },
+    {
+        "id":105,
+        "name":"mitesh",
+        "age":32,
+        "department":"CSE"
+
+    }
+]

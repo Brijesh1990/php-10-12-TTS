@@ -1,0 +1,22 @@
+[
+    {
+        "id":101,
+        "name":"viraj",
+        "email":"viraj@gmail.com",
+        "photo":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBppBJ5zRvaIrxm_GhLj52fchdTZUxUPFy_g&s",
+        "age":22,
+        "department":"IT"
+
+    },
+    {
+        "id":102,
+        "name":"vipul",
+        "email":"vipul@gmail.com",
+        "photo":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBppBJ5zRvaIrxm_GhLj52fchdTZUxUPFy_g&s",
+        "age":22,
+        "department":"CSE"
+
+    }
+
+ 
+]
