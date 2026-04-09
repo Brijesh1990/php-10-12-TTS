@@ -1,0 +1,11 @@
+<?php 
+// associative array
+$name=array("ind"=>"India","pak"=>"Pakistan","ban"=>"Bangladesh","sri"=>"Sri Lanka","nep"=>"Nepal","bhut"=>"Bhutan","afg"=>"Afghanistan","mal"=>"Maldives","chin"=>"China","jap"=>"Japan","kor"=>"Korea","rus"=>"Russia","usa"=>"United States of America","can"=>"Canada","aus"=>"Australia","uk"=>"United Kingdom","fra"=>"France","ger"=>"Germany","ita"=>"Italy","esp"=>"Spain");
+
+//print_r($name);
+
+//encode in json format
+$json=json_encode($name);
+echo $json; 
+
+?>
