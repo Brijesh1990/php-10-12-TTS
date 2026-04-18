@@ -1,6 +1,6 @@
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light mt-5">
+<nav class="navbar navbar-expand-lg navbar-light bg-light mt-0">
   <div class="container">
     <a class="navbar-brand" href="<?php echo $mainurl;?>">Shoping App</a>
     <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
