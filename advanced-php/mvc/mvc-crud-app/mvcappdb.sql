@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2026 at 08:24 AM
+-- Generation Time: Apr 23, 2026 at 07:56 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,54 @@ SET time_zone = "+00:00";
 --
 -- Database: `mvcappdb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_addcategory`
+--
+
+CREATE TABLE `tbl_addcategory` (
+  `catid` int(11) NOT NULL,
+  `categoryname` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_addproducts`
+--
+
+CREATE TABLE `tbl_addproducts` (
+  `pid` int(11) NOT NULL,
+  `catid` int(11) NOT NULL,
+  `photo` varchar(255) NOT NULL,
+  `pname` varchar(255) NOT NULL,
+  `offerprice` int(11) NOT NULL,
+  `newprice` int(11) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `descriptions` text NOT NULL,
+  `added_date` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_admin`
+--
+
+CREATE TABLE `tbl_admin` (
+  `admin_id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_admin`
+--
+
+INSERT INTO `tbl_admin` (`admin_id`, `email`, `password`) VALUES
+(1, 'superadmin@gmail.com', 'admin123456');
 
 -- --------------------------------------------------------
 
@@ -73,6 +121,25 @@ INSERT INTO `tbl_register` (`rid`, `photo`, `fullname`, `email`, `password`, `ph
 --
 
 --
+-- Indexes for table `tbl_addcategory`
+--
+ALTER TABLE `tbl_addcategory`
+  ADD PRIMARY KEY (`catid`);
+
+--
+-- Indexes for table `tbl_addproducts`
+--
+ALTER TABLE `tbl_addproducts`
+  ADD PRIMARY KEY (`pid`),
+  ADD KEY `catid` (`catid`);
+
+--
+-- Indexes for table `tbl_admin`
+--
+ALTER TABLE `tbl_admin`
+  ADD PRIMARY KEY (`admin_id`);
+
+--
 -- Indexes for table `tbl_contact`
 --
 ALTER TABLE `tbl_contact`
@@ -87,6 +154,24 @@ ALTER TABLE `tbl_register`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `tbl_addcategory`
+--
+ALTER TABLE `tbl_addcategory`
+  MODIFY `catid` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_addproducts`
+--
+ALTER TABLE `tbl_addproducts`
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_admin`
+--
+ALTER TABLE `tbl_admin`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_contact`
