@@ -1,3 +1,6 @@
+<?php 
+$mainurl="http://localhost/php-10-12-tts/advanced-php/mvc/mvc-crud-app/admin/";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
