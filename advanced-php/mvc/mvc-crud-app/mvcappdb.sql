@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 23, 2026 at 07:56 AM
+-- Generation Time: Apr 28, 2026 at 08:12 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -31,6 +31,17 @@ CREATE TABLE `tbl_addcategory` (
   `catid` int(11) NOT NULL,
   `categoryname` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_addcategory`
+--
+
+INSERT INTO `tbl_addcategory` (`catid`, `categoryname`) VALUES
+(1, 'electronics'),
+(2, 'mensThsirts'),
+(3, 'womensWatch'),
+(4, 'KindsClthes'),
+(5, 'kidsWatches');
 
 -- --------------------------------------------------------
 
@@ -159,7 +170,7 @@ ALTER TABLE `tbl_register`
 -- AUTO_INCREMENT for table `tbl_addcategory`
 --
 ALTER TABLE `tbl_addcategory`
-  MODIFY `catid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `catid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_addproducts`

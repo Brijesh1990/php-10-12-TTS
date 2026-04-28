@@ -6,10 +6,11 @@ $mainurl="http://localhost/php-10-12-tts/advanced-php/mvc/mvc-crud-app/admin/";
 <head>
 <meta charset="UTF-8">
 <title>Admin Dashboard</title>
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
 
+<!-- bvalidator validations -->
+<link rel="stylesheet" href="assets/css/red.css">
 <style>
 body {
   background: #f4f6f9;
@@ -113,9 +114,7 @@ body {
 }
 </style>
 </head>
-
 <body>
-
 <!-- TOP HEADER -->
 <div class="topbar">
   <h5 class="mb-0">Dashboard</h5>
@@ -125,3 +124,10 @@ body {
     <i class="bi bi-person-circle fs-5"></i>
   </div>
 </div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="assets/js/jquery.bvalidator.js"></script>
+<script src="assets/js/default.min.js"></script>
+<script src="assets/js/red.js"></script> 

@@ -1,3 +1,10 @@
+<!-- session set -->
+<?php 
+if(!isset($_SESSION["admin_id"]))
+{
+header("location:./");
+}    
+?>
 <!-- CONTENT -->
 <div class="content">
 <div class="row">
